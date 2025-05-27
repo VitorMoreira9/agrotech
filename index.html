@@ -1,116 +1,124 @@
-<!DOCTYPE html> 
-<html lang="pt-br"> 
+<!DOCTYPE html>
+<html lang="pt-br">
 
-<head> 
-<meta charset="UTF-8"> 
-<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-<link rel="stylesheet" href="style.css"> 
-<title>AGROTECH</title> 
-</head> 
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>AGROTECH</title>
+</head>
 
-<body> 
+<body>
 
-<nav> 
-  <div class="logo"> 
-    <a href="index.html">AGROTECH</a> 
-  </div> 
+<nav>
+  <div class="logo-container">
+    <a href="index.html" class="logo">AGROTECH</a>
+    <button class="nav-toggle" id="menu-toggle">&#9776;</button>
+  </div>
 
-  <ul> 
-    <li><a href="index.html">Home</a></li> 
+  <ul id="nav-links">
+    <li><a href="index.html">Home</a></li>
     <li>
-      <a href="https://wa.me/5511999999999?text=Olá!%20Tenho%20interesse%20no%20sistema%20AGROTECH" target="_blank" rel="noopener noreferrer">
+      <a href="https://wa.me/5511999999999?text=Olá!%20Tenho%20interesse%20no%20sistema%20AGROTECH"
+         target="_blank" rel="noopener noreferrer">
         Contato
       </a>
-    </li> 
+    </li>
   </ul>
-</nav> 
+</nav>
 
-<section class="banner"> 
-  <div class="texto"> 
-    <h1 class="titulo">
-      <span class="verde">AGRO</span><span class="amarelo">TECH</span>
-    </h1>
-    <h2 class="sub_titulo_1">SEJA AGRO, SEJA TECH</h2> 
-    <h3 class="sub_titulo_2">CONHEÇA NOSSO SISTEMA DE IRRIGAÇÃO INTELIGENTE, TRAZENDO SOLUÇÃO E INOVAÇÃO PARA O SEU NEGÓCIO</h3> 
 
-    <div class="botoes"> 
-      <!-- Botão Saiba Mais com link para a seção Saiba Mais -->
-      <a href="#saiba_mais">
-        <button class="n-overlay">Saiba Mais</button>  
-      </a>
-    </div> 
-  </div> 
-</section> 
 
-<!-- Seção de destino: SAIBA MAIS -->
-<section id="saiba_mais">
-  <h2>Saiba Mais sobre o AGROTECH</h2>
-  <p>
-    O <strong>AGROTECH</strong> é um projeto desenvolvido para otimizar o uso da água na agricultura, utilizando tecnologia para captar, armazenar e distribuir água da chuva de forma automatizada e inteligente. 
-  </p>
-  <p>
-    Nosso sistema conta com sensores que monitoram a umidade do solo, controlando a irrigação de forma eficiente. Além disso, ele é alimentado por energia sustentável, tornando a proposta ainda mais ecológica.
-  </p>
-  <p>
-    Acreditamos que, com inovação e responsabilidade ambiental, podemos transformar o modo como a água é utilizada no campo, garantindo mais produtividade e preservação do meio ambiente.
-  </p>
-</section>
 
-<script>
-  // Função que realiza o scroll animado de forma lenta
-  function scrollToSlowly(target, duration = 1500) {
-    // Pega a posição atual da janela no eixo Y
-    const start = window.pageYOffset;
-    // Pega a posição do elemento alvo no eixo Y
-    const end = target.offsetTop;
-    // Calcula a distância total que o scroll precisa percorrer
-    const distance = end - start;
-    // Variável para armazenar o tempo de início da animação
-    let startTime = null;
 
-    // Função de animação que será chamada a cada frame
-    function animation(currentTime) {
-      // Se for o primeiro frame, define o tempo inicial
-      if (!startTime) startTime = currentTime;
-      // Calcula quanto tempo passou desde o início da animação
-      const timeElapsed = currentTime - startTime;
-      // Calcula o progresso da animação (de 0 a 1)
-      const progress = Math.min(timeElapsed / duration, 1);
-      // Atualiza a posição do scroll baseada no progresso
-      window.scrollTo(0, start + distance * progress);
-      // Continua a animação enquanto o tempo não alcançar a duração total
-      if (timeElapsed < duration) {
-        requestAnimationFrame(animation);
+  <!-- BANNER / HERO SECTION -->
+  <section class="banner">
+    <div class="texto">
+      <h1 class="titulo">
+        <span class="verde">AGRO</span><span class="amarelo">TECH</span>
+      </h1>
+      <h2 class="sub_titulo_1">SEJA AGRO, SEJA TECH</h2>
+      <h3 class="sub_titulo_2">
+        CONHEÇA NOSSO SISTEMA DE IRRIGAÇÃO INTELIGENTE, TRAZENDO SOLUÇÃO E INOVAÇÃO PARA O SEU NEGÓCIO
+      </h3>
+
+      <div class="botoes">
+        <a href="#saiba_mais">
+          <button class="n-overlay">Saiba Mais</button>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO SAIBA MAIS -->
+  <section id="saiba_mais">
+    <h2>Saiba Mais sobre o AGROTECH</h2>
+    <p>
+      O <strong>AGROTECH</strong> é um projeto desenvolvido para otimizar o uso da água na agricultura, utilizando
+      tecnologia para captar, armazenar e distribuir água da chuva de forma automatizada e inteligente.
+    </p>
+    <p>
+      Nosso sistema conta com sensores que monitoram a umidade do solo, controlando a irrigação de forma eficiente.
+      Além disso, ele é alimentado por energia sustentável, tornando a proposta ainda mais ecológica.
+    </p>
+    <p>
+      Acreditamos que, com inovação e responsabilidade ambiental, podemos transformar o modo como a água é utilizada no
+      campo, garantindo mais produtividade e preservação do meio ambiente.
+    </p>
+  </section>
+
+  <!-- SCROLL ANIMADO -->
+  <script>
+    function scrollToSlowly(target, duration = 1500) {
+      const start = window.pageYOffset;
+      const end = target.offsetTop;
+      const distance = end - start;
+      let startTime = null;
+
+      function animation(currentTime) {
+        if (!startTime) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const progress = Math.min(timeElapsed / duration, 1);
+        window.scrollTo(0, start + distance * progress);
+        if (timeElapsed < duration) {
+          requestAnimationFrame(animation);
+        }
       }
+
+      requestAnimationFrame(animation);
     }
 
-    // Inicia a animação
-    requestAnimationFrame(animation);
-  }
-
-  // Seleciona todos os links internos que começam com #
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    // Adiciona um evento de clique para cada link
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault(); // Previne o comportamento padrão do link (jump instantâneo)
-      // Pega o id do elemento destino retirando o #
-      const targetID = this.getAttribute('href').substring(1);
-      // Seleciona o elemento destino pelo id
-      const target = document.getElementById(targetID);
-      // Se o elemento existe, chama a função de scroll lento
-      if (target) {
-        scrollToSlowly(target, 1500); // 1500ms = 1.5 segundos para o scroll
-      }
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetID = this.getAttribute('href').substring(1);
+        const target = document.getElementById(targetID);
+        if (target) {
+          scrollToSlowly(target, 1500);
+        }
+      });
     });
+
+    window.onload = function () {
+      window.scrollTo(0, 0);
+    };
+  </script>
+
+ <script>
+  const toggleBtn = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  toggleBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
   });
-
-  // Quando a página carregar, forçar o scroll para o topo
-  window.onload = function() {
-    window.scrollTo(0, 0);
-  };
 </script>
- <script src="js/main.js"></script>
 
-</body> 
+
+
+  <!-- JS Externo -->
+  <script src="js/main.js"></script>
+
+</body>
+
 </html>
