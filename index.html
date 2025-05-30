@@ -1,40 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <title>AGROTECH</title>
-</head>
 
+  <style>
+    /* Ocultar seção inicialmente */
+    #saiba_mais {
+      display: none;
+      padding: 20px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    /* Animação de piscar */
+    @keyframes piscar {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .piscando {
+      animation: piscar 1s infinite;
+    }
+  </style>
+</head>
 <body>
 
-<nav>
-  <div class="logo-container">
-    <a href="index.html" class="logo">AGROTECH</a>
-    <button class="nav-toggle" id="menu-toggle">&#9776;</button>
-  </div>
+  <!-- NAV -->
+  <nav>
+    <div class="logo-container">
+      <a href="#" class="logo">AGROTECH</a>
+      <button class="nav-toggle" id="menu-toggle">&#9776;</button>
+    </div>
 
-  <ul id="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="membros.html">Membros</a></li>
-    <li>
-      <a href="https://wa.me/5511999999999?text=Olá!%20Tenho%20interesse%20no%20sistema%20AGROTECH"
-         target="_blank" rel="noopener noreferrer">
-        Contato
-      </a>
-    </li>
-  </ul>
-</nav>
+    <ul id="nav-links">
+      <li><a href="#" onclick="mostrarHome()">Home</a></li>
+      <li><a href="membros.html">Membros</a></li>
+      <li>
+        <a href="https://wa.me/5511999999999?text=Olá!%20Tenho%20interesse%20no%20sistema%20AGROTECH"
+           target="_blank" rel="noopener noreferrer">
+          Contato
+      <li><a href="endereço.html">Endereço</a></li>
+        </a>
+      </li>
+    </ul>
+  </nav>
 
-
-
-
-
-  <!-- BANNER / HERO SECTION -->
-  <section class="banner">
+  <!-- HOME / BANNER -->
+  <section id="home" class="banner">
     <div class="texto">
       <h1 class="titulo">
         <span class="verde">AGRO</span><span class="amarelo">TECH</span>
@@ -45,14 +63,12 @@
       </h3>
 
       <div class="botoes">
-        <a href="#saiba_mais">
-          <button class="n-overlay">Saiba Mais</button>
-        </a>
+        <button class="piscando" onclick="mostrarSaibaMais()">Saiba Mais</button>
       </div>
     </div>
   </section>
 
-  <!-- SEÇÃO SAIBA MAIS -->
+  <!-- SAIBA MAIS (inicialmente escondido) -->
   <section id="saiba_mais">
     <h2>Saiba Mais sobre o AGROTECH</h2>
     <p>
@@ -67,59 +83,28 @@
       Acreditamos que, com inovação e responsabilidade ambiental, podemos transformar o modo como a água é utilizada no
       campo, garantindo mais produtividade e preservação do meio ambiente.
     </p>
+    <button onclick="mostrarHome()">Voltar</button>
   </section>
 
-  <!-- SCROLL ANIMADO -->
+  <!-- SCRIPT para alternar visibilidade -->
   <script>
-    function scrollToSlowly(target, duration = 1500) {
-      const start = window.pageYOffset;
-      const end = target.offsetTop;
-      const distance = end - start;
-      let startTime = null;
-
-      function animation(currentTime) {
-        if (!startTime) startTime = currentTime;
-        const timeElapsed = currentTime - startTime;
-        const progress = Math.min(timeElapsed / duration, 1);
-        window.scrollTo(0, start + distance * progress);
-        if (timeElapsed < duration) {
-          requestAnimationFrame(animation);
-        }
-      }
-
-      requestAnimationFrame(animation);
+    function mostrarSaibaMais() {
+      document.getElementById("home").style.display = "none";
+      document.getElementById("saiba_mais").style.display = "block";
     }
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetID = this.getAttribute('href').substring(1);
-        const target = document.getElementById(targetID);
-        if (target) {
-          scrollToSlowly(target, 1500);
-        }
-      });
+    function mostrarHome() {
+      document.getElementById("saiba_mais").style.display = "none";
+      document.getElementById("home").style.display = "block";
+    }
+
+    // Menu toggle (para mobile)
+    const toggleBtn = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    toggleBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
     });
-
-    window.onload = function () {
-      window.scrollTo(0, 0);
-    };
   </script>
-
- <script>
-  const toggleBtn = document.getElementById('menu-toggle');
-  const navLinks = document.getElementById('nav-links');
-
-  toggleBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
-</script>
-
-
-
-  <!-- JS Externo -->
-  <script src="js/main.js"></script>
-
 </body>
-
 </html>

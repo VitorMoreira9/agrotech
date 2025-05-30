@@ -5,8 +5,7 @@
   font-family: Arial, sans-serif;
 }
 
-body {
-  background-image: url('imagens/imagens/fundo2.jpg'); /* Caminho da imagem */
+body {/* Caminho da imagem */
   background-size: cover; /* Faz com que a imagem cubra toda a área */
   background-position: center; /* Centraliza a imagem */
   background-repeat: no-repeat; /* Impede que a imagem se repita */

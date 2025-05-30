@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Define a codificação de caracteres para português -->
+  <meta charset="UTF-8" />
+  <!-- Responsividade em dispositivos móveis -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Endereços da Empresa com Google Maps</title>
+  <link rel="stylesheet" href="endereco.css">
+
+  <!-- Estilos internos da página -->
+  <style>
+    /* Define estilo padrão para o corpo */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      display: flex; /* Layout em colunas */
+      height: 100vh;  /* Altura total da tela */
+    }
+
+    /* Estilo da caixa de lista de endereços */
+    #address-list {
+      width: 300px;
+      background-color: #f0f0f0;
+      padding: 20px;
+      overflow-y: auto; /* Adiciona rolagem se necessário */
+    }
+
+    /* Remove marcadores da lista */
+    #address-list ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    /* Espaçamento entre os itens da lista */
+    #address-list li {
+      margin-bottom: 15px;
+    }
+
+    /* Estilo dos links */
+    #address-list a {
+      text-decoration: none;
+      color: #0066cc;
+      cursor: pointer;
+    }
+
+    /* Efeito hover nos links */
+    #address-list a:hover {
+      text-decoration: underline;
+    }
+
+    /* Estilo do contêiner do mapa */
+    #map {
+      flex-grow: 1;      /* Ocupa todo o espaço restante */
+      height: 100vh;     /* Altura total da tela */
+    }
+
+    /* Estilo do título da lista */
+    h2 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+  
+
+  <!-- Bloco da lista de endereços -->
+  <div id="address-list">
+    <h2>Endereços da Empresa</h2>
+    <ul>
+      <!-- Cada item da lista representa um endereço clicável -->
+      <li>
+        <a href="#" data-address="Rua XV de Novembro, 1000, Florianópolis, SC, Brasil" target="_blank">
+          Rua XV de Novembro, 1000 - Florianópolis
+        </a>
+      </li>
+      <li>
+        <a href="#" data-address="88020-000, Florianópolis, SC, Brasil" target="_blank">
+          CEP 88020-000 - Florianópolis
+        </a>
+      </li>
+      <li>
+        <a href="#" data-address="Av. Beira Mar, 500, Florianópolis, SC, Brasil" target="_blank">
+          Av. Beira Mar, 500 - Florianópolis
+        </a>
+      </li>
+    </ul>
+    <!-- Instrução para o usuário -->
+    <p>Clique no endereço para mostrar no mapa e abrir Google Maps em nova aba.</p>
+  </div>
+
+  <!-- Área onde o mapa será exibido -->
+  <div id="map"></div>
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3536.4285248558313!2d-48.57971238913582!3d-27.58024107615659!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9527481fc122c511%3A0x8b30971f05619c42!2sR.%20Quinze%20de%20Novembro%20-%20Balneario%2C%20Florian%C3%B3polis%20-%20SC%2C%2088075-220!5e0!3m2!1spt-BR!2sbr!4v1748614502080!5m2!1spt-BR!2sbr" width="1240" height="730" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+</body>
+</html>

@@ -117,7 +117,7 @@ nav li a:hover {
 .banner {
   min-height: 100vh;
   background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-              url('imagens/fundo1.jpg') no-repeat center center / cover;
+              url('imagens/imagens/fundo1.jpg') no-repeat center center / cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -192,7 +192,7 @@ nav li a:hover {
 /* SEÇÃO SAIBA MAIS */
 #saiba_mais {
   background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
-              url('imagens/fundo2.jpg') no-repeat center center / cover;
+              url('imagens/imagens/fundo2.jpg') no-repeat center center / cover;
   color: #034d1f;
   padding: 80px 30px;
   text-align: center;
